@@ -1,0 +1,76 @@
+<div class="bg-[#1a1a1a] min-h-screen min-w-full">
+     <div class="flex justify-center container mx-auto relative">
+         <div class="absolute text-end flex justify-end w-full z-50 ">
+          <div class="text-white" >
+              <div (click)="onClick()" class="cursor-pointer">
+               <i class="fa-regular fa-comment text-4xl "></i>
+               <p class="ml-3">chat wit us</p>
+              </div>
+               <div *ngIf="isOpen"
+                    class="border-b-8 flex border-[#e47219] pl-10 pt-10 rounded-2xl bg-white w-80 h-80 animate-fade-up animate-delay-[500ms]">
+                    <div class="overflow-hidden snap-y" style="max-height: 200px; overflow-y: auto;">
+                         <input [(ngModel)]="userinpData" class="border border-black rounded-md outline-none px-2 py-2 text-black"
+                              type="text" name="inp" id="userinp" placeholder="Enter text here. . .">
+                         <button [disabled]="!userinpData"><i class="fa-regular fa-paper-plane text-black ml-5 cursor-pointer text-xl"
+                                   (click)="onSendData()"></i></button>
+                         <div>
+                              <ul class="text-black">
+                                   <div class="flex text-red-800 " *ngFor="let x of useraddonData ">you:{{x}}</div><br>
+                                   <div class="text-green-800" *ngFor="let x of addonData ">chat:{{x}}</div>
+                              </ul>
+                         </div>
+                    </div>
+               </div>
+
+          </div>
+         </div>
+          <div class="mt-20">
+               <div class="">
+                    <p class="uppercase text-white text-2xl text-center animate-fade-down animate-once animate-ease-linear animate-duration-[2000ms]">a bit about me</p>
+
+                    <div class=" mt-20 flex flex-col ">
+                         <h1 class="text-[#e47219] text-center font-bold text-[4em] animate-fade-down animate-once animate-ease-linear">{{innerBody.heading}}</h1>
+                         <div class="flex flex-col items-center">
+                              <img src={{innerBody.img}} alt="img"
+                                   class=" animate-jump-in animate-ease-linear animate-duration-[2000ms]    mt-5 bg-white text-center w-72 h-72 object-cover border-4 border-[#e47219] rounded-full">
+                              <p class=" animate-fade-up animate-duration-[2000ms] animate-ease-in mt-5 leading-10 w-1/2 text-lg text-center text-white capitalize">{{innerBody.aboutMe}}</p>
+                         </div>
+                    </div>
+               </div>
+               <div class="text-white flex md:flex-col gap-x-10 justify-center gap-5">
+            <a href="https://github.com/tamil202"><i class="fa-brands fa-github text-3xl animate-fade-right animate-once animate-duration-[700ms]" title="github"></i></a>
+            <a href="https://www.linkedin.com/groups/4314060/?highlightedUpdateUrn=urn%3Ali%3AgroupPost%3A4314060-7169529481785786369&q=highlightedFeedForGroups"><i class="fa-brands fa-linkedin text-3xl animate-once animate-duration-[800ms] animate-fade-right" title="linkedin"></i></a>
+            
+              <a href="mailto:tvanan834@gmail.com"> <i class="fa-solid fa-envelope text-3xl animate-once animate-duration-[900ms] animate-fade-right" title="mail"></i></a>
+               </div>
+               <div class="animate-fade-up animate-once animate-ease-in mb-20 ">
+                    <div class="text-black  justify-center mt-20 gap-10 flex flex-col items-center md:flex-row ">
+                         <div class="border-b-8 border-[#e47219] pl-10 pt-10 rounded-2xl bg-white w-60 h-60 animate-fade-up animate-delay-[500ms] ">
+                         <i class="fa fa-code text-5xl text-[#e47219] animate-fade-up animate-delay-[500ms] " aria-hidden="true" ></i>
+                           <br>   <p class="font-semibold text-xl mt-5">{{innerBody.known.dev}}</p>
+                           <p routerLink="web"  class="underline mt-10 font-medium cursor-pointer">More</p>
+                         </div>
+                         <div class="border-b-8 border-[#e47219] pl-10 pt-10 rounded-2xl bg-white w-60 h-60 animate-fade-up animate-delay-[600ms] ">
+                              <i class="fa fa-terminal text-5xl text-[#e47219] animate-fade-up animate-delay-[600ms] " aria-hidden="true"></i>
+                              <p class="font-semibold text-xl mt-5 capitalize">{{innerBody.known.softwares}}</p>
+                           <p routerLink="web"  class="underline mt-10 font-medium cursor-pointer">More</p>
+                         </div>
+                         <div class="border-b-8 border-[#e47219] pl-10 pt-10  rounded-2xl bg-white w-60 h-60 animate-fade-up animate-delay-[700ms] ">
+                              <i class="fa fa-code-fork  text-5xl text-[#e47219] animate-fade-up animate-delay-[700ms] " aria-hidden="true"></i>
+                              <p class="font-semibold text-xl mt-5 capitalize">{{innerBody.known.versionControl}}</p>
+                           <p  routerLink="web" class="underline mt-10 font-medium cursor-pointer">More</p>
+                         </div>
+                         <div class="border-b-8 border-[#e47219]  pl-10 pt-10  rounded-2xl bg-white w-60 h-60 animate-fade-up animate-delay-[800ms] ">
+                              <p class="text-4xl  text-[#e47219] animate-fade-up  animate-delay-[800ms] font-bold ">{{innerBody.languageKnown}}+</p>
+                              <p class="font-semibold text-xl mt-5 capitalize">{{innerBody.known.Lang}}</p>
+                           <p routerLink="web" class="underline mt-10 font-medium cursor-pointer">More</p>
+
+                         </div>
+                         
+                    </div>
+                   
+               </div>
+          </div>
+     </div>
+    
+</div>
